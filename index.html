@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Zainab!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(180deg, #1a237e 0%, #0d47a1 30%, #29b6f6 70%, #80deea 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+        }
+        
+        /* Efek gelembung di background */
+        body::before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.08) 2px, transparent 2px),
+                radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+            background-size: 150px 150px;
+            animation: bubbles 20s infinite linear;
+            z-index: 0;
+        }
+        
+        .container {
+            width: 95%;
+            max-width: 1000px;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+            z-index: 10;
+        }
+        
+        .header {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            color: #ffffff;
+            font-family: 'Fredoka One', cursive;
+            font-size: 4.5rem;
+            font-weight: 400;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            animation: swim 3s infinite alternate;
+            background: linear-gradient(to right, #4fc3f7, #e1f5fe, #4fc3f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '🦈';
+            position: absolute;
+            right: -60px;
+            top: 10px;
+            font-size: 3rem;
+            animation: sharkSwim 5s infinite linear;
+        }
+        
+        .birthday-girl {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 4rem;
+            font-weight: 400;
+            color: #ffeb3b;
+            text-shadow: 0 0 20px rgba(255, 235, 59, 0.7);
+            margin-bottom: 25px;
+            animation: pulse 2s infinite;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .birthday-girl::before {
+            content: '🐠';
+            position: absolute;
+            left: -50px;
+            top: 5px;
+            font-size: 2.5rem;
+            animation: fishSwim 4s infinite linear;
+        }
+        
+        .birthday-girl::after {
+            content: '🐙';
+            position: absolute;
+            right: -50px;
+            top: 5px;
+            font-size: 2.5rem;
+            animation: octopusFloat 6s infinite linear;
+        }
+        
+        .subtitle {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.8rem;
+            color: #bbdefb;
+            margin-top: -10px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cake-container {
+            position: relative;
+            width: 450px;
+            height: 500px;
+            margin: 0 auto 40px;
+            z-index: 10;
+        }
+        
+        /* Kue Bertema Laut */
+        .cake-base {
+            position: absolute;
+            width: 280px;
+            height: 150px;
+            background: linear-gradient(to bottom, #ffcc80 0%, #ffb74d 100%);
+            border-radius: 50% 50% 0 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: inset 0 -20px 30px rgba(0,0,0,0.2);
+        }
+        
+        .wave-top {
+            position: absolute;
+            width: 320px;
+            height: 80px;
+            background: linear-gradient(to bottom, #80deea 0%, #4dd0e1 100%);
+            border-radius: 50%;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            overflow: hidden;
+        }
+        
+        .wave-top::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to right, #29b6f6, #4fc3f7, #29b6f6);
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            animation: waveMove 3s infinite linear;
+        }
+        
+        .island {
+            position: absolute;
+            width: 180px;
+            height: 60px;
+            background: linear-gradient(to bottom, #8bc34a 0%, #689f38 100%);
+            border-radius: 50%;
+            bottom: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+        
+        .coconut-tree {
+            position: absolute;
+            width: 10px;
+            height: 80px;
+            background: linear-gradient(to bottom, #8d6e63 0%, #5d4037 100%);
+            bottom: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+        }
+        
+        .coconut {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(to bottom, #8d6e63 0%, #5d4037 100%);
+            border-radius: 50%;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+        
+        .coconut::before,
+        .coconut::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(to bottom, #8d6e63 0%, #5d4037 100%);
+            border-radius: 50%;
+        }
+        
+        .coconut::before {
+            left: -35px;
+            top: 5px;
+        }
+        
+        .coconut::after {
+            right: -35px;
+            top: 5px;
+        }
+        
+        .sea-creatures {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 6;
+        }
+        
+        .fish {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: fishSwim 8s infinite linear;
+        }
+        
+        .starfish {
+            position: absolute;
+            font-size: 2rem;
+            animation: starfishSpin 10s infinite linear;
+        }
+        
+        .shell {
+            position: absolute;
+            font-size: 2rem;
+            animation: shellFloat 12s infinite linear;
+        }
+        
+        /* Lilin Hiu */
+        .shark-candle {
+            position: absolute;
+            width: 80px;
+            height: 40px;
+            background: linear-gradient(to bottom, #78909c 0%, #546e7a 100%);
+            border-radius: 50% 50% 20% 20%;
+            bottom: 280px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 7;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .shark-fin {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            background: linear-gradient(to bottom, #546e7a 0%, #37474f 100%);
+            border-radius: 50% 50% 0 0;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+        
+        .shark-eye {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            top: 10px;
+            left: 15px;
+            z-index: 8;
+        }
+        
+        .shark-eye::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: black;
+            border-radius: 50%;
+            top: 2.5px;
+            left: 2.5px;
+        }
+        
+        .flame {
+            position: absolute;
+            width: 25px;
+            height: 50px;
+            background: linear-gradient(to bottom, #ffff00 0%, #ff9900 50%, #ff3300 100%);
+            border-radius: 50% 50% 20% 20%;
+            bottom: 320px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 8;
+            animation: underwaterFlicker 0.4s infinite alternate;
+            box-shadow: 0 0 30px rgba(255, 153, 0, 0.8);
+        }
+        
+        .flame.blown {
+            animation: blowOut 0.5s forwards;
+        }
+        
+        /* Petasan Laut */
+        .sea-mine {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, #ff5252, #d32f2f);
+            border-radius: 50%;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            opacity: 0;
+            box-shadow: 0 0 20px rgba(255, 82, 82, 0.5);
+            transition: opacity 0.3s;
+        }
+        
+        .sea-mine::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 30px;
+            background: #757575;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        .sea-mine.active {
+            opacity: 1;
+            animation: seaMineFloat 2s infinite ease-in-out;
+        }
+        
+        .explosion {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, #4fc3f7, #29b6f6, #0288d1);
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 19;
+            opacity: 0;
+        }
+        
+        .explosion.active {
+            animation: underwaterExplode 1s forwards;
+        }
+        
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9;
+        }
+        
+        .bubble {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+            border-radius: 50%;
+            opacity: 0;
+        }
+        
+        /* Surat dalam Botol */
+        .message-bottle-container {
+            position: relative;
+            max-width: 500px;
+            margin: 40px auto;
+            cursor: pointer;
+        }
+        
+        .message-bottle {
+            position: relative;
+            width: 150px;
+            height: 250px;
+            margin: 0 auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .bottle-body {
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to bottom, rgba(179, 229, 252, 0.9), rgba(129, 212, 250, 0.9));
+            border-radius: 50% 50% 30% 30%;
+            bottom: 0;
+            border: 5px solid #29b6f6;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .bottle-neck {
+            position: absolute;
+            width: 60px;
+            height: 50px;
+            background: linear-gradient(to bottom, rgba(179, 229, 252, 0.9), rgba(129, 212, 250, 0.9));
+            border-radius: 20px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid #29b6f6;
+            border-bottom: none;
+        }
+        
+        .bottle-cork {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(to bottom, #8d6e63, #5d4037);
+            border-radius: 10px;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            z-index: 12;
+            transition: transform 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .scroll-in-bottle {
+            position: absolute;
+            width: 100px;
+            height: 180px;
+            background: linear-gradient(to bottom, #f5e6c8, #e8d9b0);
+            border-radius: 10px;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 11;
+            transition: all 1s ease;
+            overflow: hidden;
+            opacity: 0.9;
+        }
+        
+        .scroll-in-bottle.open {
+            height: 400px;
+            width: 400px;
+            bottom: 50%;
+            transform: translate(-50%, 50%);
+            z-index: 100;
+            opacity: 1;
+        }
+        
+        .scroll-content {
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease 0.5s;
+            font-family: 'Nunito', sans-serif;
+            color: #1a237e;
+            text-align: center;
+        }
+        
+        .scroll-in-bottle.open .scroll-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-title {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 2.5rem;
+            color: #d32f2f;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .scroll-text {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .scroll-signature {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 1.8rem;
+            color: #1a237e;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+        
+        .ocean-creatures {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .decoration {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: float 8s infinite linear;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+        
+        .seaweed {
+            position: absolute;
+            width: 40px;
+            height: 150px;
+            background: linear-gradient(to bottom, #4caf50, #2e7d32);
+            border-radius: 20px;
+            bottom: -100px;
+            animation: seaweedSway 4s infinite ease-in-out;
+        }
+        
+        .seaweed::before,
+        .seaweed::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 120px;
+            background: linear-gradient(to bottom, #66bb6a, #388e3c);
+            border-radius: 15px;
+            bottom: 0;
+        }
+        
+        .seaweed::before {
+            left: -40px;
+            animation: seaweedSway 5s infinite ease-in-out 0.5s;
+        }
+        
+        .seaweed::after {
+            right: -40px;
+            animation: seaweedSway 6s infinite ease-in-out 1s;
+        }
+        
+        .blow-btn {
+            background: linear-gradient(to bottom, #29b6f6 0%, #0288d1 100%);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.6rem;
+            font-weight: 400;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 10px 25px rgba(2, 136, 209, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 3px solid #4fc3f7;
+        }
+        
+        .blow-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(2, 136, 209, 0.6);
+            background: linear-gradient(to bottom, #4fc3f7 0%, #039be5 100%);
+        }
+        
+        .blow-btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .blow-btn:disabled {
+            background: linear-gradient(to bottom, #81c784 0%, #4caf50 100%);
+            color: white;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        .confetti-piece {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            opacity: 0;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .birthday-icon {
+            font-size: 2.2rem;
+            margin: 0 15px;
+            color: #ffeb3b;
+            animation: spin 5s infinite linear;
+            vertical-align: middle;
+            filter: drop-shadow(0 0 5px rgba(255, 235, 59, 0.8));
+        }
+        
+        .signature {
+            margin-top: 40px;
+            color: #bbdefb;
+            font-style: italic;
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 2rem;
+            font-weight: 400;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .text-emphasis {
+            font-weight: 700;
+            color: #ffeb3b;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+        }
+        
+        /* Animations */
+        @keyframes swim {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-10px) translateX(5px); }
+            75% { transform: translateY(-5px) translateX(-5px); }
+        }
+        
+        @keyframes sharkSwim {
+            0% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(-20px) rotate(-10deg); }
+            50% { transform: translateX(0) rotate(0deg); }
+            75% { transform: translateX(20px) rotate(10deg); }
+            100% { transform: translateX(0) rotate(0deg); }
+        }
+        
+        @keyframes fishSwim {
+            0% { transform: translateX(-100px) translateY(0) scaleX(1); }
+            50% { transform: translateX(0) translateY(-20px) scaleX(1); }
+            51% { transform: translateX(0) translateY(-20px) scaleX(-1); }
+            100% { transform: translateX(100px) translateY(0) scaleX(-1); }
+        }
+        
+        @keyframes octopusFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { 
+ transform: scale(1); 
+                text-shadow: 0 0 20px rgba(255, 235, 59, 0.7);
+            }
+            50% { 
+                transform: scale(1.05); 
+                text-shadow: 0 0 40px rgba(255, 235, 59, 0.9);
+            }
+        }
+        
+        @keyframes underwaterFlicker {
+            0%, 100% { 
+                transform: translateX(-50%) scale(1); 
+                opacity: 1;
+                filter: blur(0);
+            }
+            33% { 
+                transform: translateX(-50%) scale(1.1, 0.9); 
+                opacity: 0.9;
+                filter: blur(1px);
+            }
+            66% { 
+                transform: translateX(-50%) scale(0.9, 1.1); 
+                opacity: 0.8;
+                filter: blur(0.5px);
+            }
+        }
+        
+        @keyframes blowOut {
+            0% { 
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+                box-shadow: 0 0 30px rgba(255, 153, 0, 0.8);
+            }
+            100% { 
+                transform: translateX(-50%) scale(0) rotate(180deg);
+                opacity: 0;
+                box-shadow: 0 0 0 rgba(255, 153, 0, 0);
+            }
+        }
+        
+        @keyframes waveMove {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        @keyframes starfishSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes shellFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        @keyframes seaweedSway {
+            0%, 100% { transform: skewX(0deg); }
+            50% { transform: skewX(10deg); }
+        }
+        
+        @keyframes seaMineFloat {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-20px); }
+        }
+        
+        @keyframes underwaterExplode {
+            0% { 
+                width: 0; 
+                height: 0; 
+                opacity: 1; 
+                box-shadow: 0 0 0 rgba(41, 182, 246, 0);
+            }
+            50% { 
+                width: 300px; 
+                height: 300px; 
+                opacity: 0.7; 
+                box-shadow: 0 0 80px rgba(41, 182, 246, 0.8);
+            }
+            100% { 
+                width: 0; 
+                height: 0; 
+                opacity: 0; 
+                box-shadow: 0 0 0 rgba(41, 182, 246, 0);
+            }
+        }
+        
+        @keyframes bubbleFloat {
+            0% { 
+                transform: translate(0, 0) scale(1); 
+                opacity: 0; 
+            }
+            10% { 
+                opacity: 0.8; 
+            }
+            100% { 
+                transform: translate(var(--tx), var(--ty)) scale(1.5); 
+                opacity: 0; 
+            }
+        }
+        
+        @keyframes bubbles {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-150px); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { 
+                font-size: 3.5rem; 
+            }
+            .birthday-girl { 
+                font-size: 3rem; 
+            }
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            .cake-container { 
+                width: 350px; 
+                height: 400px;
+            }
+            .cake-base { width: 220px; height: 120px; }
+            .wave-top { width: 250px; height: 60px; bottom: 100px; }
+            .island { width: 140px; height: 50px; bottom: 130px; }
+            .shark-candle { bottom: 220px; }
+            .flame { bottom: 260px; }
+            .message-bottle {
+                width: 120px;
+                height: 200px;
+            }
+            .scroll-in-bottle.open {
+                width: 300px;
+                height: 400px;
+            }
+            .blow-btn {
+                padding: 18px 40px;
+                font-size: 1.4rem;
+            }
+            .signature {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 { 
+                font-size: 2.8rem;
+            }
+            .birthday-girl { 
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .cake-container { 
+                width: 280px; 
+                height: 350px;
+            }
+            .cake-base { width: 180px; height: 100px; }
+            .wave-top { width: 200px; height: 50px; bottom: 80px; }
+            .island { width: 120px; height: 40px; bottom: 100px; }
+            .shark-candle { 
+                width: 60px;
+                height: 30px;
+                bottom: 180px; 
+            }
+            .flame { 
+                bottom: 210px;
+                width: 20px;
+                height: 40px;
+            }
+            .message-bottle {
+                width: 100px;
+                height: 180px;
+            }
+            .scroll-in-bottle.open {
+                width: 250px;
+                height: 350px;
+            }
+            .scroll-title {
+                font-size: 2rem;
+            }
+            .scroll-text {
+                font-size: 1.1rem;
+            }
+            .blow-btn {
+                padding: 16px 30px;
+                font-size: 1.2rem;
+            }
+            .signature {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="blowSound" src="https://assets.mixkit.co/sfx/preview/mixkit-underwater-bubble-blow-1093.mp3" preload="auto"></audio>
+    <audio id="explosionSound" src="https://assets.mixkit.co/sfx/preview/mixkit-bubble-pop-up-3003.mp3" preload="auto"></audio>
+    <audio id="bottleSound" src="https://assets.mixkit.co/sfx/preview/mixkit-water-bubbles-1295.mp3" preload="auto"></audio>
+    <audio id="sharkSound" src="https://assets.mixkit.co/sfx/preview/mixkit-wild-animal-roar-8.mp3" preload="auto"></audio>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Happy Birthday</h1>
+            <div class="birthday-girl">Zainab</div>
+            <div class="subtitle">Dive into an Amazing Year! 🦈🌊</div>
+        </div>
+        
+        <div class="cake-container">
+            <!-- Ranjau Laut -->
+            <div class="sea-mine" id="seaMine"></div>
+            <div class="explosion" id="explosion"></div>
+            
+            <!-- Kue Tema Laut -->
+            <div class="cake-base"></div>
+            <div class="wave-top"></div>
+            <div class="island"></div>
+            <div class="coconut-tree"></div>
+            <div class="coconut"></div>
+            
+            <!-- Makhluk Laut -->
+            <div class="sea-creatures">
+                <div class="fish" style="left: 30%; top: 40%;">🐡</div>
+                <div class="fish" style="left: 60%; top: 60%; animation-delay: 2s;">🐠</div>
+                <div class="starfish" style="left: 20%; top: 70%;">⭐</div>
+                <div class="shell" style="left: 70%; top: 30%; animation-delay: 3s;">🐚</div>
+            </div>
+            
+            <!-- Lilin Hiu -->
+            <div class="shark-candle">
+                <div class="shark-fin"></div>
+                <div class="shark-eye"></div>
+            </div>
+            <div class="flame" id="flame"></div>
+            
+            <div class="bubbles" id="bubbles"></div>
+            <div class="confetti" id="confetti"></div>
+            
+            <!-- Ganggang Laut -->
+            <div class="seaweed" style="left: 10%;"></div>
+            <div class="seaweed" style="right: 10%;"></div>
+        </div>
+        
+        <button class="blow-btn" id="blowBtn">
+            <i class="fas fa-water"></i> TIUP LILIN HIU! <i class="fas fa-fish"></i>
+        </button>
+        
+        <!-- Pesan dalam Botol -->
+        <div class="message-bottle-container" id="bottleContainer">
+            <div class="message-bottle">
+                <div class="bottle-body"></div>
+                <div class="bottle-neck"></div>
+                <div class="bottle-cork" id="bottleCork"></div>
+                <div class="scroll-in-bottle" id="scrollBottle">
+                    <div class="scroll-content">
+                        <div class="scroll-title">Message in a Bottle</div>
+                        <div class="scroll-text">
+                            Dear Zainab,<br><br>
+                            Wishing you a birthday as amazing as the ocean is deep!<br><br>
+                            May your year be filled with exciting adventures,<br>
+                            wonderful discoveries, and lots of shark-tastic moments!<br><br>
+                            Keep swimming towards your dreams<br>
+                            and remember - you're fin-tastic!<br><br>
+                            Dive into this new year with confidence and joy!
+                        </div>
+                        <div class="scroll-signature">
+                            With oceanic love,<br>
+                            Your friends 🦈💙
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="signature" style="margin-top: 10px; font-size: 1.2rem;">Click the cork to open the message bottle!</div>
+        </div>
+        
+        <div class="ocean-creatures">
+            <div class="decoration" style="top: 5%; left: 5%; animation-delay: 1s;">🐳</div>
+            <div class="decoration" style="top: 15%; right: 10%; animation-delay: 2s;">🐬</div>
+            <div class="decoration" style="top: 70%; left: 15%; animation-delay: 3s;">🦀</div>
+            <div class="decoration" style="top: 80%; right: 8%; animation-delay: 4s;">🦑</div>
+        </div>
+        
+                <div class="signature">
+            Made with Ocean Love for Shark Lover Zainab! 🌊💙
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const flame = document.getElementById('flame');
+            const blowBtn = document.getElementById('blowBtn');
+            const bubbles = document.getElementById('bubbles');
+            const confetti = document.getElementById('confetti');
+            const seaMine = document.getElementById('seaMine');
+            const explosion = document.getElementById('explosion');
+            const scrollBottle = document.getElementById('scrollBottle');
+            const bottleCork = document.getElementById('bottleCork');
+            const bottleContainer = document.getElementById('bottleContainer');
+            
+            // Audio elements
+            const blowSound = document.getElementById('blowSound');
+            const explosionSound = document.getElementById('explosionSound');
+            const bottleSound = document.getElementById('bottleSound');
+            const sharkSound = document.getElementById('sharkSound');
+            
+            let blown = false;
+            let bottleOpened = false;
+            
+            // Buat efek gelembung
+            function createBubbles(count = 20) {
+                for (let i = 0; i < count; i++) {
+                    const bubble = document.createElement('div');
+                    bubble.classList.add('bubble');
+                    bubble.style.left = `${Math.random() * 100}%`;
+                    bubble.style.top = `${Math.random() * 100}%`;
+                    bubble.style.width = `${10 + Math.random() * 20}px`;
+                    bubble.style.height = bubble.style.width;
+                    
+                    // Atur posisi akhir acak
+                    const tx = Math.random() * 100 - 50;
+                    const ty = -100 - Math.random() * 100;
+                    
+                    bubble.style.setProperty('--tx', `${tx}px`);
+                    bubble.style.setProperty('--ty', `${ty}px`);
+                    
+                    bubbles.appendChild(bubble);
+                    
+                    // Animasikan gelembung
+                    setTimeout(() => {
+                        bubble.style.opacity = '0.8';
+                        bubble.style.animation = `bubbleFloat ${2 + Math.random() * 3}s forwards`;
+                        
+                        // Hapus gelembung setelah animasi
+                        setTimeout(() => {
+                            bubble.remove();
+                        }, 3000);
+                    }, i * 100);
+                }
+            }
+            
+            // Fungsi untuk membuat konfeti bawah laut
+            function createConfetti() {
+                const colors = ['#4fc3f7', '#29b6f6', '#0288d1', '#80deea', '#ffeb3b'];
+                
+                for (let i = 0; i < 150; i++) {
+                    const piece = document.createElement('div');
+                    piece.classList.add('confetti-piece');
+                    piece.style.left = `${Math.random() * 100}%`;
+                    piece.style.top = `${Math.random() * 100}%`;
+                    piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    piece.style.borderRadius = '50%';
+                    piece.style.width = `${10 + Math.random() * 15}px`;
+                    piece.style.height = piece.style.width;
+                    confetti.appendChild(piece);
+                    
+                    // Animasikan konfeti
+                    setTimeout(() => {
+                        piece.style.opacity = '0.7';
+                        piece.style.transform = `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) rotate(${Math.random() * 360}deg)`;
+                        piece.style.transition = 'all 2s ease-out';
+                        
+                        // Hapus konfeti setelah animasi
+                        setTimeout(() => {
+                            piece.style.opacity = '0';
+                        }, 3000);
+                    }, i * 10);
+                }
+            }
+            
+            // Fungsi untuk membuat efek ledakan ranjau laut
+            function createSeaMineExplosion() {
+                // Tampilkan ranjau laut
+                seaMine.classList.add('active');
+                
+                // Mainkan suara hiu
+                sharkSound.currentTime = 0;
+                sharkSound.play().catch(e => console.log("Audio tidak bisa diputar: ", e));
+                
+                // Tunggu sebentar lalu ledakan
+                setTimeout(() => {
+                    // Sembunyikan ranjau laut
+                    seaMine.classList.remove('active');
+                    
+                    // Mainkan suara ledakan gelembung
+                    explosionSound.currentTime = 0;
+                    explosionSound.play().catch(e => console.log("Audio tidak bisa diputar: ", e));
+                    
+                    // Tampilkan efek ledakan
+                    explosion.classList.add('active');
+                    
+                    // Buat banyak gelembung
+                    createBubbles(100);
+                    
+                    // Hapus efek ledakan setelah selesai
+                    setTimeout(() => {
+                        explosion.classList.remove('active');
+                    }, 1000);
+                }, 2000);
+            }
+            
+            // Fungsi untuk membuat efek tiupan
+            function blowEffect() {
+                // Mainkan suara tiupan bawah laut
+                blowSound.currentTime = 0;
+                blowSound.play().catch(e => console.log("Audio tidak bisa diputar: ", e));
+                
+                // Animasikan api lilin
+                flame.classList.add('blown');
+                
+                // Buat gelembung dari lilin
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(() => {
+                        createBubbles(3);
+                    }, i * 50);
+                }
+            }
+            
+            // Event listener untuk tombol tiup
+            blowBtn.addEventListener('click', function() {
+                if (blown) return;
+                
+                blown = true;
+                
+                // Efek tiupan
+                blowEffect();
+                
+                // Tunggu sebentar lalu aktifkan ranjau laut dan konfeti
+                setTimeout(() => {
+                    // Aktifkan ranjau laut
+                    createSeaMineExplosion();
+                    
+                    // Buat konfeti
+                    createConfetti();
+                    
+                    // Ubah tombol
+                    blowBtn.innerHTML = '<i class="fas fa-check"></i> LILIN SUDAH DITIUP! <i class="fas fa-shark"></i>';
+                    blowBtn.disabled = true;
+                    
+                    // Buka botol pesan secara otomatis setelah 3 detik
+                    setTimeout(() => {
+                        if (!bottleOpened) {
+                            openBottle();
+                        }
+                    }, 3000);
+                }, 800);
+            });
+            
+            // Fungsi untuk membuka botol pesan
+            function openBottle() {
+                if (bottleOpened) return;
+                
+                bottleOpened = true;
+                
+                // Mainkan suara botol
+                bottleSound.currentTime = 0;
+                bottleSound.play().catch(e => console.log("Audio tidak bisa diputar: ", e));
+                
+                // Animasi gabus terbuka
+                bottleCork.style.transform = 'translateX(-50%) translateY(-50px)';
+                
+                // Buka gulungan dalam botol
+                setTimeout(() => {
+                    scrollBottle.classList.add('open');
+                    
+                    // Tambahkan efek gelembung tambahan
+                    setTimeout(() => {
+                        createBubbles(50);
+                        createConfetti();
+                    }, 500);
+                }, 500);
+            }
+            
+            // Event listener untuk botol
+            bottleCork.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (!bottleOpened) {
+                    openBottle();
+                }
+            });
+            
+            bottleContainer.addEventListener('click', function() {
+                if (!bottleOpened) {
+                    openBottle();
+                }
+            });
+            
+            // Animasi gelembung latar belakang
+            setInterval(() => {
+                createBubbles(5);
+            }, 2000);
+            
+            // Tambahkan beberapa gelembung saat halaman dimuat
+            createBubbles(30);
+            
+            // Efek hover untuk tombol
+            blowBtn.addEventListener('mouseenter', function() {
+                if (!blown) {
+                    this.style.transform = 'translateY(-5px)';
+                    createBubbles(10);
+                }
+            });
+            
+            blowBtn.addEventListener('mouseleave', function() {
+                if (!blown) {
+                    this.style.transform = 'translateY(0)';
+                }
+            });
+            
+            // Klik random untuk efek gelembung
+            document.addEventListener('click', function(e) {
+                if (!bottleOpened || e.target !== bottleCork) {
+                    createBubbles(10);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
